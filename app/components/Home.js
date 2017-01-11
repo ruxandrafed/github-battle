@@ -8,4 +8,12 @@ var Home = React.createClass({
   }
 });
 
+//var Home = function(props) {
+//  return (
+//    <div> Hello from Home! </div>
+//  );
+//}
+
+//var Home = (props) => (<div> Hello from Home! </div>);
+
 module.exports = Home;

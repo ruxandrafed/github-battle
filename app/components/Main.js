@@ -10,4 +10,10 @@ var Main = React.createClass({
   }
 });
 
+//var Main = (props) => (
+//  <div className="main-container">
+//    {props.children}
+//  </div>
+//);
+
 module.exports = Main;
