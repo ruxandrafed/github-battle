@@ -23,6 +23,9 @@ var helpers = {
     }).catch(function(err) {
       console.warn('Error in getPlayersinfo', err);
     });
+  },
+  battle: function(playersInfo) {
+
   }
 };
 
