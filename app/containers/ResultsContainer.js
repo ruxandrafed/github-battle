@@ -1,6 +1,6 @@
-var React = require('react');
-var Results = require('../components/Results');
-var githubHelpers = require('../utils/githubHelpers');
+import React from 'react';
+import Results from '../components/Results';
+import githubHelpers from '../utils/githubHelpers';
 
 
 var ResultsContainer = React.createClass({
@@ -32,4 +32,4 @@ var ResultsContainer = React.createClass({
   }
 });
 
-module.exports = ResultsContainer;
+export default ResultsContainer;

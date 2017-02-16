@@ -1,6 +1,6 @@
-var React = require('react');
-var ConfirmBattle = require('../components/ConfirmBattle');
-var githubHelpers = require('../utils/githubHelpers');
+import React from 'react';
+import ConfirmBattle from '../components/ConfirmBattle';
+import githubHelpers from '../utils/githubHelpers';
 
 var ConfirmBattleContainer = React.createClass({
   contextTypes: {

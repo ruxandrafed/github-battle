@@ -1,5 +1,5 @@
-var React = require('react');
-var Prompt = require('../components/Prompt');
+import React from 'react';
+import Prompt from '../components/Prompt';
 
 var PromptContainer = React.createClass({
   // pass content (otherwise we'd have to pass router as a props)
@@ -48,4 +48,4 @@ var PromptContainer = React.createClass({
   }
 });
 
-module.exports = PromptContainer;
+export default PromptContainer;

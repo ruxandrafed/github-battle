@@ -1,9 +1,8 @@
-var React = require('react');
-var ReactRouter = require('react-router');
-var Link = ReactRouter.Link;
-var MainContainer = require('./MainContainer');
+import React from 'react';
+import { Link } from 'react-router';
+import MainContainer from './MainContainer';
 
-var Home = React.createClass({
+const Home = React.createClass({
   render: function() {
     return (
       <MainContainer>
@@ -19,12 +18,4 @@ var Home = React.createClass({
   }
 });
 
-//var Home = function(props) {
-//  return (
-//    <div> Hello from Home! </div>
-//  );
-//}
-
-//var Home = (props) => (<div> Hello from Home! </div>);
-
-module.exports = Home;
+export default Home;

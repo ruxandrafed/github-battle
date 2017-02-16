@@ -1,23 +1,6 @@
-var React = require('react');
-var styles = {
-  container: {
-    position: 'fixed',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    fontSize: '55px',
-  },
-  content: {
-    textAlign: 'center',
-    position: 'absolute',
-    width: '100%',
-    marginTop: '38px',
-  }
-};
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 
-var Loading = React.createClass({
+const Loading = React.createClass({
   propTypes: {
     text: PropTypes.string,
     speed: PropTypes.number
@@ -35,7 +18,7 @@ var Loading = React.createClass({
     }
   },
   componentDidMount: function() {
-    var stopper = this.originalText + "...";
+    const stopper = this.originalText + "...";
     this.interval = setInterval(function() {
       if (this.state.text === stopper) {
        this.setState({
@@ -60,4 +43,21 @@ var Loading = React.createClass({
   }
 });
 
-module.exports = Loading;
+const styles = {
+  container: {
+    position: 'fixed',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    fontSize: '55px',
+  },
+  content: {
+    textAlign: 'center',
+    position: 'absolute',
+    width: '100%',
+    marginTop: '38px',
+  }
+};
+
+export default Loading;
