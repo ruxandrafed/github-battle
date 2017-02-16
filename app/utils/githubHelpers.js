@@ -1,9 +1,9 @@
-var axios = require('axios');
+import axios from 'axios';
 
 //If we hit API limit, we want these
-var id = "YOUR_CLIENT_ID";
-var sec = "YOUR_SECRET_ID";
-var param = "?client_id=" + id + "&client_secret=" + sec;
+const id = "YOUR_CLIENT_ID";
+const sec = "YOUR_SECRET_ID";
+const param = "?client_id=" + id + "&client_secret=" + sec;
 
 // returns a promise
 function getUserInfo(username) {
@@ -42,29 +42,26 @@ function calculateTotalScores(players) {
   ]
 }
 
-var helpers = {
-  getPlayersInfo: function(players) {
+export function getPlayersInfo (players) {
 //    axios.all takes an array of promises
 //    for each username in our players array, we get back a promise
-    return axios.all(players.map(function (username) {
-      return getUserInfo(username);
-    })).then(function(info) {
-      return info.map(function(user) {
-        return user.data;
-      })
-    }).catch(function(err) {
-      console.warn('Error in getPlayersinfo', err);
-    });
-  },
-  battle: function(playersInfo) {
-    var playerOneData = getPlayersData(playersInfo[0]);
-    var playerTwoData = getPlayersData(playersInfo[1]);
-    return axios.all([playerOneData, playerTwoData])
-      .then(calculateTotalScores)
-      .catch(function(err) {
-        console.warn('Error in getPlayersInfo: ', err);
-      })
-  }
-};
+  return axios.all(players.map(function (username) {
+    return getUserInfo(username);
+  })).then(function(info) {
+    return info.map(function(user) {
+      return user.data;
+    })
+  }).catch(function(err) {
+    console.warn('Error in getPlayersinfo', err);
+  });
+}
 
-module.exports = helpers;
+export function battle (playersInfo) {
+  const playerOneData = getPlayersData(playersInfo[0]);
+  const playerTwoData = getPlayersData(playersInfo[1]);
+  return axios.all([playerOneData, playerTwoData])
+    .then(calculateTotalScores)
+    .catch(function(err) {
+      console.warn('Error in getPlayersInfo: ', err);
+  });
+}

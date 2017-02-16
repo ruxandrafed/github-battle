@@ -4,7 +4,6 @@ import UserDetailsWrapper from './UserDetailsWrapper';
 import { Link } from 'react-router';
 import MainContainer from './MainContainer';
 import Loading from './Loading';
-import styles from '../styles';
 
 function StartOver() {
   return (

@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import { Link } from 'react-router';
-import styles from '../styles';
+import { space } from '../styles';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
 import MainContainer from './MainContainer';
@@ -20,12 +20,12 @@ function ConfirmBattle(props) {
           </UserDetailsWrapper>
         </div>
         <div className='col-sm-8 col-sm-offset-2'>
-          <div className='col-sm-12' style={styles.space}>
+          <div className='col-sm-12' style={space}>
             <button type="button" className="btn btn-lg btn-success" onClick={props.onInitiateBattle}>
               INITIATE BATTLE
             </button>
           </div>
-          <div className='col-sm-12' style={styles.space}>
+          <div className='col-sm-12' style={space}>
             <Link to="/playerOne">
               <button type="button" className="btn btn-lg btn-warning" onClick={props.onInitiateBattle}>
                 RESELECT PLAYERS

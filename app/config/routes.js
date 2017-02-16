@@ -8,7 +8,7 @@ import ResultsContainer from '../containers/ResultsContainer';
 import Main from '../components/Main';
 import Home from '../components/Home';
 
-var routes = (
+const routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />

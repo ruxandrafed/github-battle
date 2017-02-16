@@ -1,7 +1,7 @@
 import React from 'react';
 import Prompt from '../components/Prompt';
 
-var PromptContainer = React.createClass({
+const PromptContainer = React.createClass({
   // pass content (otherwise we'd have to pass router as a props)
   contextTypes: {
     router: React.PropTypes.object.isRequired
@@ -18,7 +18,7 @@ var PromptContainer = React.createClass({
   },
   handleSubmitUser: function(e) {
     e.preventDefault();
-    var username = this.state.username;
+    const { username } = this.state;
     this.setState({
       username: ''
     });
@@ -28,12 +28,12 @@ var PromptContainer = React.createClass({
         pathname: '/battle',
         query: {
           playerOne: this.props.routeParams.playerOne,
-          playerTwo: this.state.username,
+          playerTwo: username,
         }
       });
     } else {
       // go to /playerTwo
-      this.context.router.push('/playerTwo/' + this.state.username);
+      this.context.router.push('/playerTwo/' + username);
     }
   },
   render: function() {
