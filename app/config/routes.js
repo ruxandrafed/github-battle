@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import PromptContainer from '../containers/PromptContainer';
 import ConfirmBattleContainer from '../containers/ConfirmBattleContainer';
@@ -9,7 +9,7 @@ import Main from '../components/Main';
 import Home from '../components/Home';
 
 const routes = (
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
       <Route path='playerOne' header='Player One' component={PromptContainer} />
