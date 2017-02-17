@@ -3,16 +3,16 @@ import axios from 'axios';
 //If we hit API limit, we want these
 const id = "YOUR_CLIENT_ID";
 const sec = "YOUR_SECRET_ID";
-const param = "?client_id=" + id + "&client_secret=" + sec;
+const param = `?client_id=${id}&client_secret=${sec}`;
 
 // returns a promise
-function getUserInfo(username) {
-  return axios.get('https://api.github.com/users/' + username + param);
+function getUserInfo(username = 'ruxandrafed') {
+  return axios.get(`https://api.github.com/users/${username + param}`);
 }
 
 function getRepos(username) {
   // fetch username repos
-  return axios.get('https://api.github.com/users/' + username + '/repos' + param + '&per_page=100');
+  return axios.get(`https://api.github.com/users/${username}/repos${param}&per_page=100`);
 }
 
 function getTotalStars(repos) {
@@ -26,7 +26,7 @@ function getPlayersData(player) {
     .then((totalStars) => (
       {
         followers: player.followers,
-        totalStars: totalStars,
+        totalStars,
         repoCount: player.public_repos
       }
     ));
