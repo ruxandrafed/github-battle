@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Results from '../components/Results';
 import { battle } from '../utils/githubHelpers';
 
-
 class ResultsContainer extends Component {
   constructor () {
     super();

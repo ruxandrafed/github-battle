@@ -5,17 +5,15 @@ import { Link } from 'react-router';
 import MainContainer from './MainContainer';
 import Loading from './Loading';
 
-function StartOver() {
-  return (
-    <MainContainer>
-      <Link to="/playerOne">
-        <button type="button" className="btn btn-lg btn-success">Start over</button>
-      </Link>
-    </MainContainer>
-  )
-}
+const StartOver = () => (
+  <MainContainer>
+    <Link to="/playerOne">
+      <button type="button" className="btn btn-lg btn-success">Start over</button>
+    </Link>
+  </MainContainer>
+);
 
-function Results({ isLoading, scores, playersInfo }) {
+const Results = ({ isLoading, scores, playersInfo }) => {
   if (isLoading === true) {
     return <Loading text="One moment" speed={100}/>
   }
@@ -43,12 +41,12 @@ function Results({ isLoading, scores, playersInfo }) {
       <StartOver />
     </MainContainer>
   )
-}
+};
 
 Results.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   playersInfo: PropTypes.array.isRequired,
   scores: PropTypes.array.isRequired
-}
+};
 
 export default Results;
